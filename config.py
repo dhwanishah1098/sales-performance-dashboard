@@ -1,8 +1,5 @@
-# Dashboard configuration
-DATA_PATH = "data/sales_data.csv"
-REPORT_OUTPUT = "reports/"
-FISCAL_YEAR_START = 4  # April
-
-REGIONS = ["North", "South", "East", "West"]
-TARGET_MARGIN = 0.35
-REVENUE_TARGET_MONTHLY = 500_000
+DB_HOST = 'localhost'
+DB_PORT = 5432
+DB_NAME = 'analytics'
+REPORT_OUTPUT_DIR = 'reports/'
+DATE_FORMAT = '%Y-%m-%d'
