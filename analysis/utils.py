@@ -10,3 +10,6 @@ def active_regions(df):
 
 def top_region(df):
     return df.groupby("region")["revenue"].sum().idxmax()
+
+def units_per_order(df):
+    return (df.groupby("order_id")["units_sold"].sum().mean()).round(2)
