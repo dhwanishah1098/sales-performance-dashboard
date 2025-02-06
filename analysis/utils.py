@@ -13,3 +13,6 @@ def top_region(df):
 
 def units_per_order(df):
     return (df.groupby("order_id")["units_sold"].sum().mean()).round(2)
+
+def weekly_revenue(df):
+    return df.resample("W", on="order_date")["revenue"].sum()
