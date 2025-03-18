@@ -28,3 +28,6 @@ def safe_divide(num, den, default=0.0):
 
 def month_label(period):
     return str(period)[:7]
+
+def format_revenue(val):
+    return f"${val:,.0f}"
