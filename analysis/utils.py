@@ -31,3 +31,6 @@ def month_label(period):
 
 def format_revenue(val):
     return f"${val:,.0f}"
+
+def yoy_growth(current, prior):
+    return round((current - prior) / prior * 100, 2) if prior else None
