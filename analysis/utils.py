@@ -37,3 +37,6 @@ def yoy_growth(current, prior):
 
 def revenue_by_quarter(df):
     return df.groupby(df["order_date"].dt.to_period("Q"))["revenue"].sum()
+
+def fill_missing_months(df, date_col, value_col):
+    return df.set_index(date_col)[value_col].asfreq("MS", fill_value=0).reset_index()
