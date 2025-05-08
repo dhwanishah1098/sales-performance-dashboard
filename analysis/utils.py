@@ -40,3 +40,6 @@ def revenue_by_quarter(df):
 
 def fill_missing_months(df, date_col, value_col):
     return df.set_index(date_col)[value_col].asfreq("MS", fill_value=0).reset_index()
+
+def rank_products(df, n=5):
+    return df.groupby("product_name")["revenue"].sum().nlargest(n)
