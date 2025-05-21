@@ -43,3 +43,6 @@ def fill_missing_months(df, date_col, value_col):
 
 def rank_products(df, n=5):
     return df.groupby("product_name")["revenue"].sum().nlargest(n)
+
+def avg_selling_price(df):
+    return (df["revenue"].sum() / df["units_sold"].sum()).round(2)
