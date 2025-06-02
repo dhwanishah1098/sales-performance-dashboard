@@ -46,3 +46,6 @@ def rank_products(df, n=5):
 
 def avg_selling_price(df):
     return (df["revenue"].sum() / df["units_sold"].sum()).round(2)
+
+def orders_in_range(df, start, end):
+    return df[(df["order_date"] >= start) & (df["order_date"] <= end)]
