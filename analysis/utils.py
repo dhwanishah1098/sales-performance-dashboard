@@ -49,3 +49,6 @@ def avg_selling_price(df):
 
 def orders_in_range(df, start, end):
     return df[(df["order_date"] >= start) & (df["order_date"] <= end)]
+
+def customer_count(df):
+    return df["customer_id"].nunique()
