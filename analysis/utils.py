@@ -52,3 +52,7 @@ def orders_in_range(df, start, end):
 
 def customer_count(df):
     return df["customer_id"].nunique()
+
+def new_customers_this_month(df, month):
+    first = df.groupby("customer_id")["order_date"].min()
+    return (first.dt.to_period("M") == month).sum()
