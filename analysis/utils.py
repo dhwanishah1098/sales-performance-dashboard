@@ -56,3 +56,6 @@ def customer_count(df):
 def new_customers_this_month(df, month):
     first = df.groupby("customer_id")["order_date"].min()
     return (first.dt.to_period("M") == month).sum()
+
+def margin_by_product(df):
+    return df.groupby("product_name")["margin"].mean().sort_values(ascending=False)
