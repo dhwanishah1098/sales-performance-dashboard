@@ -59,3 +59,6 @@ def new_customers_this_month(df, month):
 
 def margin_by_product(df):
     return df.groupby("product_name")["margin"].mean().sort_values(ascending=False)
+
+def revenue_per_customer(df):
+    return df.groupby("customer_id")["revenue"].sum().mean().round(2)
