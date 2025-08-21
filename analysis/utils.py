@@ -68,3 +68,6 @@ def orders_per_day(df):
 
 def active_regions(df):
     return sorted(df["region"].dropna().unique().tolist())
+
+def top_region(df):
+    return df.groupby("region")["revenue"].sum().idxmax()
