@@ -77,3 +77,6 @@ def units_per_order(df):
 
 def weekly_revenue(df):
     return df.resample("W", on="order_date")["revenue"].sum()
+
+def pct_change(a, b):
+    return round((b - a) / a * 100, 2) if a else 0.0
