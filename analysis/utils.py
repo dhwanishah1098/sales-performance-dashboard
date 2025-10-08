@@ -80,3 +80,6 @@ def weekly_revenue(df):
 
 def pct_change(a, b):
     return round((b - a) / a * 100, 2) if a else 0.0
+
+def clamp(val, lo, hi):
+    return max(lo, min(hi, val))
