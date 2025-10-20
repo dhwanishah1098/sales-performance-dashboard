@@ -83,3 +83,6 @@ def pct_change(a, b):
 
 def clamp(val, lo, hi):
     return max(lo, min(hi, val))
+
+def safe_divide(num, den, default=0.0):
+    return round(num / den, 4) if den else default
