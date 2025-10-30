@@ -86,3 +86,6 @@ def clamp(val, lo, hi):
 
 def safe_divide(num, den, default=0.0):
     return round(num / den, 4) if den else default
+
+def month_label(period):
+    return str(period)[:7]
