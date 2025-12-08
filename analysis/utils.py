@@ -95,3 +95,6 @@ def format_revenue(val):
 
 def yoy_growth(current, prior):
     return round((current - prior) / prior * 100, 2) if prior else None
+
+def revenue_by_quarter(df):
+    return df.groupby(df["order_date"].dt.to_period("Q"))["revenue"].sum()
